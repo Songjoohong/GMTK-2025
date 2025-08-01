@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private bool isLand = true;
 
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 3f;
+
 
     void Start()
     {
@@ -64,12 +67,20 @@ public class PlayerController : MonoBehaviour
     {
         if (playerInput.jump && isLand)
         {
-            //playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpVelocity);
             isLand = false;
             // Animation
         }
 
+        if (playerRigidbody.velocity.y > 0 && !playerInput.jump)
+        {
+            playerRigidbody.velocity +=
+                Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+        }
+        else if (playerRigidbody.velocity.y < 0)
+        {
+            playerRigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+        }
 
     }
 
