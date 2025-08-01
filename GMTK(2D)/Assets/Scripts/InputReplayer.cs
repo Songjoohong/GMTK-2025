@@ -43,8 +43,8 @@ public class InputReplayer : MonoBehaviour
 
             if (input.time >= npcElapsedTime)
             {
-                Move(input);
-                Jump(input);
+                Move(input.input);
+                Jump(input.input);
             }
             else
             {
@@ -54,9 +54,9 @@ public class InputReplayer : MonoBehaviour
         }
     }
 
-    private void Move(InputRecord input)
+    private void Move(PlayerInput input)
     {
-        rigidbody.AddForce(Vector2.right * input.moveInput * moveSpeed, ForceMode2D.Force);
+        rigidbody.AddForce(Vector2.right * input.move * moveSpeed, ForceMode2D.Force);
 
         if (rigidbody.velocity.x > maxSpeed)
         {
@@ -66,12 +66,12 @@ public class InputReplayer : MonoBehaviour
         {
             rigidbody.velocity = new Vector2(-maxSpeed, rigidbody.velocity.y);
         }
-        if (input.moveInput == 0)
+        if (input.move == 0)
         {
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
             // Animation
         }
-        else if (input.moveInput < 0)
+        else if (input.move < 0)
         {
             if (rigidbody.velocity.x > 0)
             {
@@ -80,7 +80,7 @@ public class InputReplayer : MonoBehaviour
             // Animation
             // Sprite flip
         }
-        else if (input.moveInput > 0)
+        else if (input.move > 0)
         {
             if (rigidbody.velocity.x < 0)
             {
@@ -91,9 +91,9 @@ public class InputReplayer : MonoBehaviour
         }
     }
 
-    private void Jump(InputRecord input)
+    private void Jump(PlayerInput input)
     {
-        if (input.jumpPressed && isLand)
+        if (input.jump && isLand)
         {
             rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isLand = false;

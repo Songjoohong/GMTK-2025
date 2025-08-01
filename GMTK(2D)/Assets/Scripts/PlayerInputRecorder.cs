@@ -8,8 +8,6 @@ public class PlayerInputRecorder : MonoBehaviour
     private PlayerInput playerInput;
     public List<InputRecord> inputLog = new List<InputRecord>();
     private float deltaTime = 0f;
-    private float previousMove = 0;
-    private bool previousJump = false;
 
     void Start()
     {
@@ -23,22 +21,21 @@ public class PlayerInputRecorder : MonoBehaviour
         bool jump = playerInput.jump;
         bool interaction = playerInput.interaction;
 
+
         if (inputLog.Count == 0)
         {
             inputLog.Add(new InputRecord
             {
                 time = deltaTime,
-                moveInput = move,
-                jumpPressed = jump,
-                interactionPressed = interaction
+                input = playerInput
             });
         }
         else
         {
             InputRecord lastRecord = inputLog[^1];
-            if (lastRecord.interactionPressed == interaction
-                && Mathf.Approximately(lastRecord.moveInput, move)
-                && lastRecord.jumpPressed == jump)
+            if (lastRecord.input.interaction == interaction
+                && Mathf.Approximately(lastRecord.input.move, move)
+                && lastRecord.input.jump == jump)
             {
                 inputLog[^1].time += deltaTime;
             }
@@ -47,9 +44,7 @@ public class PlayerInputRecorder : MonoBehaviour
                 inputLog.Add(new InputRecord
                 {
                     time = deltaTime,
-                    moveInput = move,
-                    jumpPressed = jump,
-                    interactionPressed = interaction
+                    input = playerInput
                 });
             }
         }

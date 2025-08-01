@@ -6,7 +6,5 @@ using UnityEngine;
 public class InputRecord
 {
     public float time;
-    public float moveInput;
-    public bool jumpPressed;
-    public bool interactionPressed;
+    public PlayerInput input;
 }
