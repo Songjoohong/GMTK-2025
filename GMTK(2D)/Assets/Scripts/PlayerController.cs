@@ -38,15 +38,24 @@ public class PlayerController : MonoBehaviour
         }
         if (playerInput.move == 0)
         {
+            playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
             // Animation
         }
         else if (playerInput.move < 0)
         {
+            if (playerRigidbody.velocity.x > 0)
+            {
+                playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
+            }
             // Animation
             // Sprite flip
         }
         else if (playerInput.move > 0)
         {
+            if (playerRigidbody.velocity.x < 0)
+            {
+                playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
+            }
             // Animation
             // Sprite flip
         }
