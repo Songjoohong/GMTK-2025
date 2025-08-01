@@ -86,13 +86,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        isLand = true;
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (Vector2.Dot(contact.normal, Vector2.up) > 0.5f)
+            {
+                isLand = true;
+            }
+        }
         // Animation
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isLand = true;
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (Vector2.Dot(contact.normal, Vector2.up) > 0.5f)
+            {
+                isLand = true;
+            }
+        }
         // Animation
     }
 
@@ -100,17 +112,5 @@ public class PlayerController : MonoBehaviour
     {
         isLand = false;
         // Animation
-    }
-
-    private float AccelerationGraph(float time)
-    {
-        return maxSpeed / (accelerationTime * accelerationTime) * time * time;
-    }
-
-    private float DecelerationGraph(float time, float startSpeed)
-    {
-        float result = maxSpeed / (accelerationTime * accelerationTime) * (time - (decelerationTime - ((float)Math.Sqrt(decelerationTime * startSpeed / maxSpeed) + decelerationTime))) * (time - (decelerationTime - ((float)Math.Sqrt(decelerationTime * startSpeed / maxSpeed) + decelerationTime)));
-
-        return Mathf.Abs(result) < 0.5f ? 0 : result;
     }
 }
