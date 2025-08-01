@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInputRecorder : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
     public List<InputRecord> inputLog = new List<InputRecord>();
     private float deltaTime = 0f;
 
