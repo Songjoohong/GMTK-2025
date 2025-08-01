@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public string interactionName;
     public float move { get; private set; }
     public bool jump { get; private set; }
+    public bool jumpPressed { get; private set; }
     public bool interaction { get; private set; }
 
     void Start()
@@ -21,6 +22,7 @@ public class PlayerInput : MonoBehaviour
     {
         move = Input.GetAxisRaw(moveAxisName);
         jump = Input.GetButton(jumpName);
+        jumpPressed = Input.GetButtonDown(jumpName);
         interaction = Input.GetButton(interactionName);
     }
 }
