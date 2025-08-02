@@ -5066,6 +5066,7 @@ GameObject:
   - component: {fileID: 288122445}
   - component: {fileID: 288122444}
   - component: {fileID: 288122443}
+  - component: {fileID: 288122446}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -5143,6 +5144,18 @@ Transform:
   - {fileID: 2132864415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288122446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288122442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d841ba15fadf6fa429d00ca0ec66852c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &340868700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2201494201915767606, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
@@ -6344,7 +6357,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.566858, y: 10.9, z: -10}
+  m_LocalPosition: {x: -22.578203, y: 10.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9105,7 +9118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {x: -38, y: 2.1}
-  playerPrefab: {fileID: 5972475292825382111, guid: dfb65aeaf13fa844da78993ef068620e, type: 3}
+  playerPrefab: {fileID: 5972475292825382111, guid: 638cb0eb49b30b140a62749f13b77b6b, type: 3}
   clonePrefab: {fileID: 8034471018857201809, guid: 378bdd2345d44f6448b6fa886cb58acc, type: 3}
   playerObject: {fileID: 0}
   clones: []
@@ -26277,6 +26290,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e84242515c9ab4cb7c4ca727ba731a, type: 3}
+--- !u!1 &1786344050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786344052}
+  - component: {fileID: 1786344051}
+  m_Layer: 0
+  m_Name: GhostManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1786344051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786344050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1396e11364cd24b8cf63900337d557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostPrefab: {fileID: 5972475292825382111, guid: 133aa6f3d3e2b8144bc0b0af39947f97, type: 3}
+--- !u!4 &1786344052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786344050}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1797443587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27789,5 +27847,6 @@ SceneRoots:
   - {fileID: 1688394165}
   - {fileID: 519420032}
   - {fileID: 288122445}
-  - {fileID: 1413365285}
   - {fileID: 1710555016}
+  - {fileID: 1786344052}
+  - {fileID: 1413365285}
