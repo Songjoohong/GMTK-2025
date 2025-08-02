@@ -5005,6 +5005,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3227587755549406506, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
+      propertyPath: reverse
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4063556511553288175, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -5304,6 +5308,10 @@ PrefabInstance:
     - target: {fileID: 2201494201915767606, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227587755549406506, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
+      propertyPath: reverse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063556511553288175, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6336,7 +6344,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.585882, y: 10.9, z: -10}
+  m_LocalPosition: {x: -22.566858, y: 10.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7082,6 +7090,10 @@ PrefabInstance:
     - target: {fileID: 2201494201915767606, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227587755549406506, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
+      propertyPath: reverse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063556511553288175, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9093,8 +9105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {x: -38, y: 2.1}
-  playerPrefab: {fileID: 5972475292825382111, guid: 25df91e53fa08c945ac7d6786fe0a684, type: 3}
-  clonePrefab: {fileID: 8034471018857201809, guid: 5aee086f0a6b7bb49873304307535ccf, type: 3}
+  playerPrefab: {fileID: 5972475292825382111, guid: dfb65aeaf13fa844da78993ef068620e, type: 3}
+  clonePrefab: {fileID: 8034471018857201809, guid: 378bdd2345d44f6448b6fa886cb58acc, type: 3}
   playerObject: {fileID: 0}
   clones: []
 --- !u!4 &1413365285
@@ -9322,6 +9334,10 @@ PrefabInstance:
     - target: {fileID: 2201494201915767606, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227587755549406506, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
+      propertyPath: reverse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063556511553288175, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_LocalScale.x
@@ -25957,7 +25973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3227587755549406506, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: reverse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4063556511553288175, guid: 16d5bd1dc4cdc1e458e54396b9cad4c0, type: 3}
       propertyPath: m_LocalScale.x

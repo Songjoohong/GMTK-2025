@@ -939,28 +939,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51957b772de982d4cb70eb9128879233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTime: 1
-  decelerationTime: 0.2
+  accelerationTime: 0.9
+  decelerationTime: 0.15
   maxSpeed:
-  - 10
-  - 10
-  - 10
+  - 14
+  - 14
+  - 14
   jumpHeight:
-  - 6
-  - 6
-  - 6
+  - 5
+  - 5
+  - 5
   timeToApex:
-  - 0.5
-  - 0.5
-  - 0.5
+  - 0.35
+  - 0.35
+  - 0.35
   fallMultiplier:
   - 3
   - 3
   - 3
   lowJumpMultiplier:
-  - 2.5
-  - 2.5
-  - 2.5
+  - 2
+  - 2
+  - 2
 --- !u!251 &7207474172612259408
 PlatformEffector2D:
   m_ObjectHideFlags: 0

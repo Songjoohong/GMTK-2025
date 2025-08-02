@@ -9851,7 +9851,7 @@ GameObject:
   - component: {fileID: 2656347854168403796}
   m_Layer: 0
   m_Name: Chainsaw_Circle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
