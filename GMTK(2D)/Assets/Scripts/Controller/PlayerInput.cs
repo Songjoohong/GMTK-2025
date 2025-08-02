@@ -23,3 +23,4 @@ public class PlayerInput : MonoBehaviour
         input.interaction = Input.GetButton(interactionName);
     }
 }
+

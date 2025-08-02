@@ -37,3 +37,4 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"충돌 감지됨: {gameObject.name} ({gameObject.layer}) <-> {collision.gameObject.name} ({collision.gameObject.layer})");
     }
 }
+

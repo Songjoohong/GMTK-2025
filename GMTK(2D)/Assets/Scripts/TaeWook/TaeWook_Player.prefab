@@ -532,14 +532,14 @@ GameObject:
   - component: {fileID: 3587460677642578696}
   - component: {fileID: 9159505306050728874}
   - component: {fileID: 938841740300622869}
-  - component: {fileID: 4155442579172373854}
-  - component: {fileID: 6257642916816666351}
-  - component: {fileID: 8438292592992169311}
   - component: {fileID: 3336806638961068821}
   - component: {fileID: 6663853496348114167}
   - component: {fileID: 9033230935563490697}
   - component: {fileID: 2927643963962093086}
   - component: {fileID: -7559935127022878571}
+  - component: {fileID: -1780230921662832123}
+  - component: {fileID: -834446732380219448}
+  - component: {fileID: 106515148220843334}
   m_Layer: 3
   m_Name: TaeWook_Player
   m_TagString: Player
@@ -660,7 +660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.85, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &938841740300622869
 Rigidbody2D:
@@ -689,52 +689,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &4155442579172373854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972475292825382111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381c6816b77208c4d98ea379f5917edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAxisName: Horizontal
-  jumpName: Jump
-  interactionName: Interaction
-  input:
-    move: 0
-    jump: 0
-    interaction: 0
---- !u!114 &6257642916816666351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972475292825382111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0695906efe289294e972fa2437a5f47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footCollider: {fileID: 9159505306050728874}
---- !u!114 &8438292592992169311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972475292825382111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe24c34ecc7987244ac04479aef6fef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
-  inputLog: []
 --- !u!114 &3336806638961068821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +769,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionLog: []
   rotationLog: []
+  statusLog: 
+  flipLog: 
+  animLog: []
 --- !u!114 &-7559935127022878571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,8 +785,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5972475292825382111}
-  ghostPrefab: {fileID: 5972475292825382111, guid: 133aa6f3d3e2b8144bc0b0af39947f97, type: 3}
   spawnPos: {x: -38, y: 2.1}
+--- !u!114 &-1780230921662832123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972475292825382111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381c6816b77208c4d98ea379f5917edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAxisName: Horizontal
+  jumpName: Jump
+  interactionName: Interaction
+  input:
+    move: 0
+    jump: 0
+    interaction: 0
+--- !u!114 &-834446732380219448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972475292825382111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0695906efe289294e972fa2437a5f47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footCollider: {fileID: 9159505306050728874, guid: dfb65aeaf13fa844da78993ef068620e, type: 3}
+--- !u!114 &106515148220843334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972475292825382111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe24c34ecc7987244ac04479aef6fef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
+  inputLog: []
 --- !u!1 &6463236283551722333
 GameObject:
   m_ObjectHideFlags: 0

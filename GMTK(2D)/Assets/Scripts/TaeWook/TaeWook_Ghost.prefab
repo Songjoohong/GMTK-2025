@@ -532,10 +532,10 @@ GameObject:
   - component: {fileID: 3587460677642578696}
   - component: {fileID: -5770224905520438814}
   - component: {fileID: -5916123643298234737}
-  - component: {fileID: 5380467603335674828}
+  - component: {fileID: -6970902048538174800}
   m_Layer: 6
   m_Name: TaeWook_Ghost
-  m_TagString: Clone
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,9 +670,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.85, y: 1}
   m_EdgeRadius: 0
---- !u!50 &5380467603335674828
+--- !u!50 &-6970902048538174800
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -695,9 +695,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!1 &6463236283551722333
 GameObject:

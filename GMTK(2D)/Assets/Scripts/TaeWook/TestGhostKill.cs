@@ -45,6 +45,8 @@ public class TestGhostKill : MonoBehaviour
 
         // 고스트 생성/플레이어 생성
         ghostManager.SpawnGhosts();
+        // 블록 초기화
+        ghostManager.ResetBlocks();
 
         var player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         GameManager.Instance.playerObject = player;

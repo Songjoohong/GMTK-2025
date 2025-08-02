@@ -12,7 +12,6 @@ public class ObstacleNew : MonoBehaviour
     {
         if (isTriggered) return;
 
-        // 플레이어 or 고스트 모두 감지
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
@@ -20,7 +19,6 @@ public class ObstacleNew : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Ghost"))
         {
-            // 고스트(클론)도 죽음 이펙트 + 삭제
             StartCoroutine(DeathSequence_Ghost(collision.gameObject));
         }
     }
@@ -34,7 +32,6 @@ public class ObstacleNew : MonoBehaviour
 
         Destroy(effect);
 
-        // 플레이어 기록, 고스트 생성
         GhostRecorder ghostRecorder = player.GetComponent<GhostRecorder>();
         GhostManager ghostManager = FindObjectOfType<GhostManager>();
 
@@ -49,6 +46,9 @@ public class ObstacleNew : MonoBehaviour
             );
             ghostRecorder.Clear();
             ghostManager.SpawnGhosts();
+
+            // **블록 초기화 호출 추가**
+            ghostManager.ResetBlocks();
         }
 
         Destroy(player);

@@ -76,4 +76,14 @@ public class GhostManager : MonoBehaviour
         ghostAnimLogs.Clear();
         ClearGhosts();
     }
+
+    // 씬 내 모든 BlockHitCounter 찾아서 초기화 호출
+    public void ResetBlocks()
+    {
+        var blocks = FindObjectsOfType<BlockHitCounter>();
+        foreach (var block in blocks)
+        {
+            block.OnPlayerRespawn();
+        }
+    }
 }
