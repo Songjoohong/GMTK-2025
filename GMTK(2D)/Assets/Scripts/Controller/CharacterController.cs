@@ -196,6 +196,12 @@ public class CharacterController : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
+            gravity[i] = (2 * jumpHeight[i]) / Mathf.Pow(timeToApex[i], 2);
+            jumpVelocity[i] = gravity[i] * timeToApex[i];
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
             children[i].SetActive(false);
         }
 

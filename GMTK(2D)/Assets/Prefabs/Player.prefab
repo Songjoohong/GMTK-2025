@@ -764,9 +764,9 @@ MonoBehaviour:
   - 3
   - 3
   lowJumpMultiplier:
-  - 2
-  - 2
-  - 2
+  - 24
+  - 24
+  - 24
 --- !u!251 &6663853496348114167
 PlatformEffector2D:
   m_ObjectHideFlags: 0
