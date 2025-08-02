@@ -142,13 +142,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4178944712563195160}
   - component: {fileID: 5155055257281754804}
+  - component: {fileID: 6508780757119557689}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4178944712563195160
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +217,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &6508780757119557689
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926611897580186286}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2859590741661441288
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7298046975451855172
 Transform:
   m_ObjectHideFlags: 0
@@ -745,6 +763,8 @@ GameObject:
   - component: {fileID: 4466621103530579700}
   - component: {fileID: 1745522001996651852}
   - component: {fileID: 7207474172612259408}
+  - component: {fileID: 4842569931345560819}
+  - component: {fileID: 6776338818240933382}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -812,7 +832,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -921,11 +941,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerationTime: 1
   decelerationTime: 0.2
-  maxSpeed: 10
-  jumpHeight: 6
-  timeToApex: 0.5
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 3
+  maxSpeed:
+  - 10
+  - 10
+  - 10
+  jumpHeight:
+  - 6
+  - 6
+  - 6
+  timeToApex:
+  - 0.5
+  - 0.5
+  - 0.5
+  fallMultiplier:
+  - 3
+  - 3
+  - 3
+  lowJumpMultiplier:
+  - 2.5
+  - 2.5
+  - 2.5
 --- !u!251 &7207474172612259408
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -945,6 +980,36 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &4842569931345560819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034471018857201809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d159c40fac1bd374fab49017c4b280b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStatus: 2
+--- !u!111 &6776338818240933382
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034471018857201809}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8312193172557208952
 GameObject:
   m_ObjectHideFlags: 0

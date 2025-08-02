@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &564568328312153763
 Transform:
   m_ObjectHideFlags: 0
@@ -365,13 +365,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5795373690103626909}
   - component: {fileID: 9027212765790303258}
+  - component: {fileID: 7550952148091403527}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5795373690103626909
 Transform:
   m_ObjectHideFlags: 0
@@ -439,6 +440,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &7550952148091403527
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253974216275537570}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  - {fileID: 7400000, guid: 08a4283664bbe1c4bb690ba43a184c01, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5884467085823217992
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +537,7 @@ GameObject:
   - component: {fileID: 8438292592992169311}
   - component: {fileID: 3336806638961068821}
   - component: {fileID: 6663853496348114167}
+  - component: {fileID: 9033230935563490697}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -586,7 +605,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -728,11 +747,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerationTime: 1
   decelerationTime: 0.2
-  maxSpeed: 10
-  jumpHeight: 6
-  timeToApex: 0.5
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 3
+  maxSpeed:
+  - 10
+  - 10
+  - 10
+  jumpHeight:
+  - 6
+  - 6
+  - 6
+  timeToApex:
+  - 0.5
+  - 0.5
+  - 0.5
+  fallMultiplier:
+  - 3
+  - 3
+  - 3
+  lowJumpMultiplier:
+  - 2.5
+  - 2.5
+  - 2.5
 --- !u!251 &6663853496348114167
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -752,6 +786,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &9033230935563490697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972475292825382111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d159c40fac1bd374fab49017c4b280b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStatus: 2
 --- !u!1 &6463236283551722333
 GameObject:
   m_ObjectHideFlags: 0
