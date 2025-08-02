@@ -221,13 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51957b772de982d4cb70eb9128879233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTime: 1
-  decelerationTime: 0.2
-  maxSpeed: 10
-  jumpHeight: 6
-  timeToApex: 0.5
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 3
+  accelerationTime: 0.9
+  decelerationTime: 0.15
+  maxSpeed: 14
+  jumpHeight: 5
+  timeToApex: 0.3
+  fallMultiplier: 1
+  lowJumpMultiplier: 4.5
 --- !u!251 &6663853496348114167
 PlatformEffector2D:
   m_ObjectHideFlags: 0
