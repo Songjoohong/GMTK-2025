@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class InputRecord
+public class CharacterInput
 {
-    public float time;
-    public PlayerInput input;
+    public float move;
+    public bool jump;
+    public bool interaction;
 }

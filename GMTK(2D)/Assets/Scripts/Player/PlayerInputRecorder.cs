@@ -17,9 +17,9 @@ public class PlayerInputRecorder : MonoBehaviour
     void FixedUpdate()
     {
         deltaTime = Time.fixedDeltaTime;
-        float move = playerInput.move;
-        bool jump = playerInput.jump;
-        bool interaction = playerInput.interaction;
+        float moveRecord = playerInput.input.move;
+        bool jumpRecord = playerInput.input.jump;
+        bool interactionRecord = playerInput.input.interaction;
 
 
         if (inputLog.Count == 0)
@@ -27,15 +27,20 @@ public class PlayerInputRecorder : MonoBehaviour
             inputLog.Add(new InputRecord
             {
                 time = deltaTime,
-                input = playerInput
+                input = new CharacterInput
+                {
+                    move = moveRecord,
+                    jump = jumpRecord,
+                    interaction = interactionRecord
+                }
             });
         }
         else
         {
             InputRecord lastRecord = inputLog[^1];
-            if (lastRecord.input.interaction == interaction
-                && Mathf.Approximately(lastRecord.input.move, move)
-                && lastRecord.input.jump == jump)
+            if (lastRecord.input.interaction == interactionRecord
+                && Mathf.Approximately(lastRecord.input.move, moveRecord)
+                && lastRecord.input.jump == jumpRecord)
             {
                 inputLog[^1].time += deltaTime;
             }
@@ -44,7 +49,12 @@ public class PlayerInputRecorder : MonoBehaviour
                 inputLog.Add(new InputRecord
                 {
                     time = deltaTime,
-                    input = playerInput
+                    input = new CharacterInput
+                    {
+                        move = moveRecord,
+                        jump = jumpRecord,
+                        interaction = interactionRecord
+                    }
                 });
             }
         }

@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
-    private PlayerInput playerInput;
     private Rigidbody2D playerRigidbody;
-    public Collider2D footCollider;
 
     public float accelerationTime;
     public float decelerationTime;
@@ -23,33 +21,29 @@ public class PlayerController : MonoBehaviour
 
     private bool canJump = false;
     private bool isLand = true;
-  
+
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 3f;
 
-
     void Start()
-    {
-        playerInput = GetComponent<PlayerInput>();
-        playerRigidbody = GetComponent<Rigidbody2D>();
-
-        
-    }
-
-    private void FixedUpdate()
     {
         gravity = (2 * jumpHeight) / Mathf.Pow(timeToApex, 2);
         jumpVelocity = gravity * timeToApex;
 
         Physics2D.gravity = new Vector2(0, -gravity);
 
-        Move();
-        Jump();
+        playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Move()
+    // Update is called once per frame
+    void Update()
     {
-        float targetSpeed = playerInput.move * maxSpeed;
+        
+    }
+
+    public void Move(CharacterInput input)
+    {
+        float targetSpeed = input.move * maxSpeed;
 
         if (targetSpeed == 0 || targetSpeed * playerRigidbody.velocity.x < 0)
         {
@@ -63,9 +57,9 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = new Vector2(currentSpeed, playerRigidbody.velocity.y);
     }
 
-    private void Jump()
+    public void Jump(CharacterInput input)
     {
-        if (playerInput.jump)
+        if (input.jump)
         {
             if (isLand && canJump)
             {
@@ -76,12 +70,12 @@ public class PlayerController : MonoBehaviour
             // Animation
         }
 
-        if (!playerInput.jump)
+        if (!input.jump)
         {
             canJump = true;
         }
 
-        if (playerRigidbody.velocity.y > 0 && !playerInput.jump)
+        if (playerRigidbody.velocity.y > 0 && !input.jump)
         {
             playerRigidbody.velocity +=
                 Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
