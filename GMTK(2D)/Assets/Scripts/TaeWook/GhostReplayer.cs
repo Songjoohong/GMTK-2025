@@ -77,9 +77,9 @@ public class GhostReplayer : MonoBehaviour
                 // 등록된 모든 AnimationState 이름 디버그
                 foreach (AnimationState state in animationComponent)
                 {
-                    Debug.Log($"[Replayer] Animation 컴포넌트 등록 이름: {state.name}");
+                    //Debug.Log($"[Replayer] Animation 컴포넌트 등록 이름: {state.name}");
                 }
-                Debug.Log($"[Replayer] 리플레이에서 재생하려는 이름: {logAnimName}");
+                //Debug.Log($"[Replayer] 리플레이에서 재생하려는 이름: {logAnimName}");
 
                 if (animationComponent[logAnimName] != null)
                 {
@@ -88,7 +88,7 @@ public class GhostReplayer : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"[Replayer] {logAnimName}은(는) Animation 컴포넌트에 없음!");
+                    //Debug.LogWarning($"[Replayer] {logAnimName}은(는) Animation 컴포넌트에 없음!");
                 }
             }
         }

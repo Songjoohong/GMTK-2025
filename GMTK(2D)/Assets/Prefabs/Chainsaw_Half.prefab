@@ -19629,6 +19629,7 @@ GameObject:
   - component: {fileID: 2201494201915767606}
   - component: {fileID: 374760593897963840}
   - component: {fileID: 3227587755549406506}
+  - component: {fileID: 525732952889760736}
   m_Layer: 0
   m_Name: Chainsaw_Half
   m_TagString: Obstacle
@@ -19717,3 +19718,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 1
+--- !u!114 &525732952889760736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731335551726430210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8aa7990f543604f89475f8d582b725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffectPrefab: {fileID: 3319272858040866332, guid: 72c8852cc2076874284470a6fba4c90a, type: 3}
+  effectDuration: 1

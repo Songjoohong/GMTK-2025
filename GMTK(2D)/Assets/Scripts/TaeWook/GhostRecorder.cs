@@ -30,7 +30,9 @@ public class GhostRecorder : MonoBehaviour
         animLog.Add(animName);
 
         if (!string.IsNullOrEmpty(animName))
-            Debug.Log($"[Recorder] 기록된 애니메이션 이름: {animName}");
+        {
+            //Debug.Log($"[Recorder] 기록된 애니메이션 이름: {animName}");
+        }
     }
 
     string GetCurrentPlayingAnimationName(Animation anim)
