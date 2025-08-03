@@ -17,8 +17,8 @@ public class MushroomPickup : MonoBehaviour
             {
                 if (characterStatus.currentStatus == CharacterStatus.Status.Chick)
                 {
-                    SoundManager.Instance.PlayOneShotSound("SFX_Grow");
                     characterStatus.ChangeStatus(CharacterStatus.Status.Chicken);
+                    SoundManager.Instance.PlayOneShotSound("SFX_Grow");
                     // ´ß º¯½Å ·ÎÁ÷
                 }
                 else if (characterStatus.currentStatus == CharacterStatus.Status.Chicken)

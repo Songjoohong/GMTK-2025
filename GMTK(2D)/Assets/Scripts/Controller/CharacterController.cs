@@ -168,6 +168,7 @@ public class CharacterController : MonoBehaviour
             if (isLand && canJump)
             {
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpVelocity[(int)characterStatus.currentStatus]);
+                SoundManager.Instance.PlayRandomJump();
                 isLand = false;
             }
             canJump = false;
