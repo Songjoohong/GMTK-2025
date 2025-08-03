@@ -14684,5 +14684,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11f76dff80f5f9498bb4f74d202407e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  cloneTag: Clone
+  collectEffectPrefab: {fileID: 5038098544054232591, guid: 2bbfe1376d0977b43845a705e106b99a, type: 3}
+  effectDuration: 1
