@@ -20,11 +20,6 @@ public class TestGhostKill : MonoBehaviour
 
     void Update()
     {
-        if (canKill && Input.GetKeyDown(KeyCode.K))
-        {
-            canKill = false;
-            StartCoroutine(KillAndNextLoop());
-        }
     }
 
     IEnumerator KillAndNextLoop()

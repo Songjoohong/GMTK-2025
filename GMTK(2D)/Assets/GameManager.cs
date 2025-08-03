@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         elapsedTime += Time.deltaTime;
+
         if (elapsedTime >= waitTime && !dogSpawn)
         {
             dogObject = Instantiate(dogPrefab);
