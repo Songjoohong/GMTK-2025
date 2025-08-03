@@ -15,6 +15,19 @@ public class GhostManager : MonoBehaviour
 
     private List<GhostReplayer> ghostInstances = new List<GhostReplayer>();
 
+    // 플레이어 죽음 처리 중인지 플래그
+    private bool isPlayerDying = false;
+
+    public bool IsPlayerDying()
+    {
+        return isPlayerDying;
+    }
+
+    private void SetPlayerDying(bool dying)
+    {
+        isPlayerDying = dying;
+    }
+
     public void SaveGhostTrack(
         List<Vector3> posLog,
         List<Quaternion> rotLog,
@@ -77,7 +90,6 @@ public class GhostManager : MonoBehaviour
         ClearGhosts();
     }
 
-    // 씬 내 모든 BlockHitCounter 찾아서 초기화 호출
     public void ResetBlocks()
     {
         var blocks = FindObjectsOfType<BlockHitCounter>();
@@ -85,5 +97,21 @@ public class GhostManager : MonoBehaviour
         {
             block.OnPlayerRespawn();
         }
+    }
+
+    // 플레이어 죽음 처리 시작
+    public bool TryStartPlayerDeath()
+    {
+        if (isPlayerDying)
+            return false;
+
+        isPlayerDying = true;
+        return true;
+    }
+
+    // 플레이어 죽음 처리 완료
+    public void EndPlayerDeath()
+    {
+        isPlayerDying = false;
     }
 }

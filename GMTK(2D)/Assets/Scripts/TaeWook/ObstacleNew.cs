@@ -10,12 +10,14 @@ public class ObstacleNew : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isTriggered) return;
-
         if (collision.gameObject.CompareTag("Player"))
         {
-            isTriggered = true;
-            StartCoroutine(DeathSequence_Player(collision.gameObject));
+            var ghostManager = FindObjectOfType<GhostManager>();
+            if (ghostManager == null) return;
+
+            if (!ghostManager.TryStartPlayerDeath()) return; // 이미 죽음 처리 중이면 무시
+
+            StartCoroutine(DeathSequence_Player(collision.gameObject, ghostManager));
         }
         else if (collision.gameObject.CompareTag("Ghost"))
         {
@@ -23,7 +25,7 @@ public class ObstacleNew : MonoBehaviour
         }
     }
 
-    IEnumerator DeathSequence_Player(GameObject player)
+    IEnumerator DeathSequence_Player(GameObject player, GhostManager ghostManager)
     {
         GameObject effect = Instantiate(deathEffectPrefab, player.transform.position, Quaternion.identity);
         player.SetActive(false);
@@ -33,7 +35,6 @@ public class ObstacleNew : MonoBehaviour
         Destroy(effect);
 
         GhostRecorder ghostRecorder = player.GetComponent<GhostRecorder>();
-        GhostManager ghostManager = FindObjectOfType<GhostManager>();
 
         if (ghostRecorder != null && ghostManager != null)
         {
@@ -47,7 +48,6 @@ public class ObstacleNew : MonoBehaviour
             ghostRecorder.Clear();
             ghostManager.SpawnGhosts();
 
-            // **블록 초기화 호출 추가**
             ghostManager.ResetBlocks();
         }
 
@@ -59,7 +59,8 @@ public class ObstacleNew : MonoBehaviour
             var newPlayer = Instantiate(gm.playerPrefab, gm.spawnPos, Quaternion.identity);
             gm.playerObject = newPlayer;
         }
-        isTriggered = false;
+
+        ghostManager.EndPlayerDeath();
     }
 
     IEnumerator DeathSequence_Ghost(GameObject ghost)
