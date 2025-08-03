@@ -51,10 +51,7 @@ public class CharacterController : MonoBehaviour
             children[i] = gameObject.transform.GetChild(i).gameObject;
             childrenAnimation[i] = children[i].GetComponent<Animation>();
         }
-        foreach (AnimationState state in childrenAnimation[1])
-        {
-            Debug.Log($"등록된 애니메이션 이름: {state.name}");
-        }
+        
         for (int i = 0; i < 3; i++)
         {
             gravity[i] = (2 * jumpHeight[i]) / Mathf.Pow(timeToApex[i], 2);
@@ -133,6 +130,11 @@ public class CharacterController : MonoBehaviour
             {
                 ChangeStatus(CharacterStatus.Status.Chicken);
                 SoundManager.Instance.PlayOneShotSound("SFX_Grow");
+            }
+            else if (characterStatus.currentStatus == CharacterStatus.Status.Chicken)
+            {
+                SoundManager.Instance.PlayOneShotSound("SFX_Eat_Muschroom");
+                GameManager.Instance.life++;
             }
         }
     }

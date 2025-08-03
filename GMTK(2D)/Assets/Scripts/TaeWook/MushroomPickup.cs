@@ -13,20 +13,7 @@ public class MushroomPickup : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             var characterStatus = other.GetComponent<CharacterStatus>();
-            if (characterStatus != null)
-            {
-                if (characterStatus.currentStatus == CharacterStatus.Status.Chick)
-                {
-                    characterStatus.ChangeStatus(CharacterStatus.Status.Chicken);
-
-                    // 닭 변신 로직
-                }
-                else if (characterStatus.currentStatus == CharacterStatus.Status.Chicken)
-                {
-                    SoundManager.Instance.PlayOneShotSound("SFX_Eat_Muschroom");
-                    // 알 낳기 로직 (알 오브젝트 생성 등)
-                }
-            }
+           
             // 달걀 상태는 여기서 따로 다룰 필요 없음
             // 이펙트 재생 및 버섯 제거 처리
             if (collectEffectPrefab != null)
