@@ -10,9 +10,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab;
     public GameObject clonePrefab;
+    public GameObject dogPrefab;
 
     public GameObject playerObject;
+    public GameObject dogObject;
     public List<GameObject> clones = new List<GameObject>();
+
+    public float waitTime = 2f;
+    private float elapsedTime = 0f;
+    private bool dogSpawn;
 
     void Awake()
     {
@@ -29,6 +35,18 @@ public class GameManager : MonoBehaviour
     {
         playerObject = Instantiate(playerPrefab);
         playerObject.transform.position = spawnPos;
+    }
+
+    void Update()
+    {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= waitTime && !dogSpawn)
+        {
+            dogObject = Instantiate(dogPrefab);
+            dogObject.transform.position = spawnPos;
+            dogObject.GetComponent<EnemyChase>().target = playerObject.transform;
+            dogSpawn = true;
+        }
     }
 
     public void PlayerDie()
@@ -49,5 +67,12 @@ public class GameManager : MonoBehaviour
             //Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), playerCollider, true);
             obj.GetComponent<InputReplayer>().Replay(spawnPos);
         }
+    }
+
+    public void ResetDog()
+    {
+        Destroy(dogObject);
+        elapsedTime = 0;
+        dogSpawn = false;
     }
 }

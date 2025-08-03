@@ -10257,6 +10257,51 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &558275022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558275024}
+  - component: {fileID: 558275023}
+  m_Layer: 0
+  m_Name: GhostManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &558275023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558275022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1396e11364cd24b8cf63900337d557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostPrefab: {fileID: 5972475292825382111, guid: 133aa6f3d3e2b8144bc0b0af39947f97, type: 3}
+--- !u!4 &558275024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558275022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.671726, y: 9.940078, z: -0.14125466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792116287
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,10 +10573,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {x: -35, y: 1.5}
-  playerPrefab: {fileID: 5972475292825382111, guid: dfb65aeaf13fa844da78993ef068620e, type: 3}
-  clonePrefab: {fileID: 8034471018857201809, guid: 378bdd2345d44f6448b6fa886cb58acc, type: 3}
+  playerPrefab: {fileID: 5972475292825382111, guid: 638cb0eb49b30b140a62749f13b77b6b, type: 3}
+  clonePrefab: {fileID: 5972475292825382111, guid: 133aa6f3d3e2b8144bc0b0af39947f97, type: 3}
+  dogPrefab: {fileID: 8231224285632660892, guid: 37c258a2f06f8a6458535a82fb767b63, type: 3}
   playerObject: {fileID: 0}
+  dogObject: {fileID: 0}
   clones: []
+  waitTime: 0.5
 --- !u!4 &1512335786
 Transform:
   m_ObjectHideFlags: 0
@@ -10587,3 +10635,4 @@ SceneRoots:
   - {fileID: 1512335786}
   - {fileID: 1926092630}
   - {fileID: 792116290}
+  - {fileID: 558275024}
