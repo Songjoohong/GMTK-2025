@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5972475292825382111}
-  spawnPos: {x: -38, y: 2.1}
+  spawnPos: {x: -34.15, y: -56.53}
 --- !u!114 &-1780230921662832123
 MonoBehaviour:
   m_ObjectHideFlags: 0
