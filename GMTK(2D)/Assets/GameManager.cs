@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         playerObject = Instantiate(playerPrefab);
         playerObject.transform.position = spawnPos;
+        SoundManager.Instance.PlayBGM("BGM_Ingame", true);
     }
 
     public void PlayerDie()

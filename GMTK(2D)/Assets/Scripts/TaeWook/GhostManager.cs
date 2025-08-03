@@ -80,15 +80,6 @@ public class GhostManager : MonoBehaviour
         ghostInstances.Clear();
     }
 
-    public void ResetTracks()
-    {
-        ghostPositionLogs.Clear();
-        ghostRotationLogs.Clear();
-        ghostStatusLogs.Clear();
-        ghostFlipLogs.Clear();
-        ghostAnimLogs.Clear();
-        ClearGhosts();
-    }
 
     public void ResetBlocks()
     {
@@ -97,6 +88,12 @@ public class GhostManager : MonoBehaviour
         {
             block.OnPlayerRespawn();
         }
+
+        // CoinManager 인스턴스 찾아서 ResetCoins 호출
+        var coinManager = FindObjectOfType<CoinManager>();
+        coinManager.SpawnAllCoins();
+        coinManager.ResetScore();
+
     }
 
     // 플레이어 죽음 처리 시작
