@@ -723,6 +723,7 @@ MonoBehaviour:
   - 24
   - 24
   - 24
+  stepSoundInterval: 0
 --- !u!251 &6663853496348114167
 PlatformEffector2D:
   m_ObjectHideFlags: 0

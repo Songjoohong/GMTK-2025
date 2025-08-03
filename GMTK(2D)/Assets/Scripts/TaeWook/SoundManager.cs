@@ -17,6 +17,10 @@ public class SoundManager : MonoBehaviour
     public int poolSize = 10;
     private List<AudioSource> audioSourcePool = new List<AudioSource>();
 
+    // 후보군 이름 (Resources/Sounds 폴더 내에 실제 사운드 이름과 맞게)
+    private string[] walkStepSoundNames = { "SFX_Walk_1", "SFX_Walk_2", "SFX_Walk_3" };
+    private string[] jumpSoundNames = { "SFX_Chick_Jump 1", "SFX_Chick_Jump 2", "SFX_Chick_Jump 3", "SFX_Chick_Jump 4" };
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -44,7 +48,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 사용 가능한 AudioSource 찾기 (풀링)
     private AudioSource GetAvailableAudioSource()
     {
         foreach (var src in audioSourcePool)
@@ -52,14 +55,21 @@ public class SoundManager : MonoBehaviour
             if (!src.isPlaying)
                 return src;
         }
-        // 부족하면 새로 생성
         AudioSource newSrc = Instantiate(audioSourcePrefab, transform);
         newSrc.playOnAwake = false;
         audioSourcePool.Add(newSrc);
         return newSrc;
     }
 
-    // 이름으로 UI 사운드 재생
+    // 후보군 배열에서 랜덤 사운드 재생
+    private void PlayRandomOneShot(string[] candidateNames)
+    {
+        if (candidateNames == null || candidateNames.Length == 0) return;
+
+        string chosen = candidateNames[Random.Range(0, candidateNames.Length)];
+        PlayOneShotSound(chosen);
+    }
+
     public void PlayUISound(string clipName)
     {
         if (clipDict.TryGetValue(clipName, out var clip))
@@ -75,7 +85,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 이름으로 BGM 재생
     public void PlayBGM(string clipName, bool loop = true)
     {
         if (clipDict.TryGetValue(clipName, out var clip))
@@ -90,7 +99,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 이름으로 단발성 효과음 재생
     public void PlayEffectSound(string clipName)
     {
         if (clipDict.TryGetValue(clipName, out var clip))
@@ -106,7 +114,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 이름으로 여러 효과음 동시 재생 (풀링 활용)
     public void PlayOneShotSound(string clipName)
     {
         if (clipDict.TryGetValue(clipName, out var clip))
@@ -118,5 +125,18 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning($"OneShot sound not found: {clipName}");
         }
+    }
+
+    // 걷기 발걸음 소리 랜덤 재생
+    public void PlayRandomWalkStep()
+    {
+        PlayRandomOneShot(walkStepSoundNames);
+    }
+
+
+    // 점프 소리 랜덤 재생
+    public void PlayRandomJump()
+    {
+        PlayRandomOneShot(jumpSoundNames);
     }
 }

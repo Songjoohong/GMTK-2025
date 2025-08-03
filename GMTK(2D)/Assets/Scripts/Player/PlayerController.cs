@@ -32,6 +32,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // 애니메이션 이벤트에서 호출할 함수 (public이어야 함)
+    public void PlayStepSound()
+    {
+        // SoundManager의 인스턴스를 통해 발걸음 소리 재생
+        SoundManager.Instance.PlayRandomWalkStep();
+        Debug.Log("발걸음 소리 재생!");
+    }
+
+    // 점프 소리를 재생하고 싶다면
+    public void PlayJumpSound()
+    {
+        SoundManager.Instance.PlayRandomJump();
+        Debug.Log("점프 소리 재생!");
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"충돌 감지됨: {gameObject.name} ({gameObject.layer}) <-> {collision.gameObject.name} ({collision.gameObject.layer})");
