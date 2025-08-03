@@ -62,6 +62,7 @@ public class BlockHitCounter : MonoBehaviour
                 if (currentCount <= 0)
                 {
                     isBroken = true;
+                    SoundManager.Instance.PlayEffectSound("SFX_Block_Breaks"); 
                     SetChildrenActive(false);
                     if (boxCollider != null)
                         boxCollider.enabled = false;
