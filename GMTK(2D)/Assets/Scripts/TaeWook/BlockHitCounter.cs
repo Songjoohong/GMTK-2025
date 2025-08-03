@@ -52,6 +52,8 @@ public class BlockHitCounter : MonoBehaviour
 
         if (collision.gameObject.CompareTag(playerTag) || collision.gameObject.CompareTag(cloneTag))
         {
+            if (collision.gameObject.CompareTag(playerTag))
+                SoundManager.Instance.PlayEffectSound("SFX_JumpBlock");
             if (currentCount > 0)
             {
                 currentCount--;

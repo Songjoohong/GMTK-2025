@@ -168,6 +168,7 @@ public class CharacterController : MonoBehaviour
             if (isLand && canJump)
             {
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpVelocity[(int)characterStatus.currentStatus]);
+                SoundManager.Instance.PlayRandomJump();
                 isLand = false;
             }
             canJump = false;
@@ -187,6 +188,17 @@ public class CharacterController : MonoBehaviour
         {
             playerRigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier[(int)characterStatus.currentStatus] - 1) * Time.fixedDeltaTime;
         }
+    }
+    public void PlayFootstepSound()
+    {
+        // 걷기 발걸음 랜덤 사운드 재생
+        SoundManager.Instance.PlayRandomWalkStep();
+    }
+
+    public void PlayJumpSound()
+    {
+        // 점프 랜덤 사운드 재생
+        SoundManager.Instance.PlayRandomJump();
     }
 
     private void ChangeStatus(CharacterStatus.Status status)

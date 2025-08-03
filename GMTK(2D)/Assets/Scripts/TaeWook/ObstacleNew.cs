@@ -12,6 +12,7 @@ public class ObstacleNew : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.PlayEffectSound("SFX_Death_Saw");
             var ghostManager = FindObjectOfType<GhostManager>();
             if (ghostManager == null) return;
 
