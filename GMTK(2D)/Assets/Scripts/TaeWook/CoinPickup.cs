@@ -20,7 +20,7 @@ public class CoinPickup : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Ghost"))
         {
             if (other.CompareTag("Player"))
-                SoundManager.Instance.PlayOneShotSound("Coin");
+                SoundManager.Instance.PlayOneShotSound("SFX_JumpBlock");
 
             isCollected = true; // 점수 처리 막기 위해 플래그 설정
             if (coinManager != null)

@@ -17,11 +17,13 @@ public class MushroomPickup : MonoBehaviour
             {
                 if (characterStatus.currentStatus == CharacterStatus.Status.Chick)
                 {
+                    SoundManager.Instance.PlayOneShotSound("SFX_Grow");
                     characterStatus.ChangeStatus(CharacterStatus.Status.Chicken);
                     // 닭 변신 로직
                 }
                 else if (characterStatus.currentStatus == CharacterStatus.Status.Chicken)
                 {
+                    SoundManager.Instance.PlayOneShotSound("SFX_Eat_Muschroom");
                     // 알 낳기 로직 (알 오브젝트 생성 등)
                 }
             }
