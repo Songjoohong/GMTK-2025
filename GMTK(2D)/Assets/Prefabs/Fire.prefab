@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6882937311215283750}
   - component: {fileID: 8528655054456001805}
   - component: {fileID: 2529591032957240895}
+  - component: {fileID: 5450138399557552510}
+  - component: {fileID: 8812095883225994011}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -4831,6 +4833,76 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5450138399557552510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238838531674858703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8aa7990f543604f89475f8d582b725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1
+  chickDeathEffectPrefab: {fileID: 0}
+  chickenDeathEffectPrefab: {fileID: 0}
+  chickCorpsePrefab: {fileID: 5972475292825382111, guid: 1e5d63622c79f9f42835797868178b9b, type: 3}
+  chickenCorpsePrefab: {fileID: 5972475292825382111, guid: de622a34a03b6674391cef28adcd142b, type: 3}
+  effectDuration: 1
+--- !u!60 &8812095883225994011
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238838531674858703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42381635, y: 0.4199753}
+      - {x: 0.0127212405, y: 0.5531046}
+      - {x: -0.35763928, y: 0.47999778}
+      - {x: -0.5565185, y: 0.20244038}
+      - {x: -0.66327155, y: 0.015015602}
+      - {x: 0.6335887, y: 0.006534815}
+      - {x: 0.53107595, y: 0.21092133}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5398078248550743868
 GameObject:
   m_ObjectHideFlags: 0

@@ -460,7 +460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8aa7990f543604f89475f8d582b725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEffectPrefab: {fileID: 659006351545520583, guid: 206579ab732f49545b9f99e879eb5461, type: 3}
+  obstacleType: 0
+  chickDeathEffectPrefab: {fileID: 659006351545520583, guid: 206579ab732f49545b9f99e879eb5461, type: 3}
+  chickenDeathEffectPrefab: {fileID: 3319272858040866332, guid: 72c8852cc2076874284470a6fba4c90a, type: 3}
+  chickCorpsePrefab: {fileID: 5972475292825382111, guid: 1e5d63622c79f9f42835797868178b9b, type: 3}
+  chickenCorpsePrefab: {fileID: 5972475292825382111, guid: de622a34a03b6674391cef28adcd142b, type: 3}
   effectDuration: 1
 --- !u!1 &9031589665984332832
 GameObject:
