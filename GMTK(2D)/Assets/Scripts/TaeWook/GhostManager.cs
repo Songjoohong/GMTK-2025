@@ -94,6 +94,10 @@ public class GhostManager : MonoBehaviour
         coinManager.SpawnAllCoins();
         coinManager.ResetScore();
 
+        // MushroomManager 인스턴스 찾아서 RestMushrooms 호출
+        var mushroomManager = FindObjectOfType<MushroomManager>();
+        mushroomManager.ResetMushrooms();
+
     }
 
     // 플레이어 죽음 처리 시작
