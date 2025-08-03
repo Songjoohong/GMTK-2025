@@ -28,6 +28,7 @@ public class MultiToggleButton : MonoBehaviour
             if (pressingCount == 1)
                 SetTargetsActive(true);
             UpdateButtonVisuals(true);
+            SoundManager.Instance.PlayOneShotSound("SFX_Door");
         }
     }
 

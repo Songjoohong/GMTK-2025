@@ -132,6 +132,7 @@ public class CharacterController : MonoBehaviour
             if (characterStatus.currentStatus == CharacterStatus.Status.Chick)
             {
                 ChangeStatus(CharacterStatus.Status.Chicken);
+                SoundManager.Instance.PlayOneShotSound("SFX_Grow");
             }
         }
     }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum MovementType
 {
-    Line,   // 0→1→2→1→0
-    Cycle   // 0→1→2→0→1
+    Line,   // 0→1→2→1→0 왕복 루프
+    Cycle   // 0→1→2→0→1 순환 루프
 }
 
 public class MoverNew : MonoBehaviour
@@ -26,6 +26,8 @@ public class MoverNew : MonoBehaviour
     private int dir = 1;
     private Vector3[] pathPoints;          // positions 위치 복제본
 
+    private Vector3 initialPosition;       // 최초 위치 저장용 변수
+
     void Start()
     {
         if (positions == null || positions.Length == 0) return;
@@ -35,6 +37,14 @@ public class MoverNew : MonoBehaviour
         for (int i = 0; i < positions.Length; i++)
             pathPoints[i] = positions[i].position;
 
+        // 최초 위치 저장 (startPos가 있으면 그것, 없으면 첫 위치)
+        if (startPos != null)
+            initialPosition = startPos.position;
+        else if (positions.Length > 0)
+            initialPosition = positions[0].position;
+        else
+            initialPosition = transform.position;
+
         StartCoroutine(MoveRoutine());
     }
 
@@ -43,7 +53,7 @@ public class MoverNew : MonoBehaviour
         // 1. startPos → startGoalIndex 위치로 먼저 이동
         if (startPos != null && startGoalIndex >= 0 && startGoalIndex < pathPoints.Length)
         {
-            Vector3 start = startPos.position;
+            Vector3 start = initialPosition;
             Vector3 end = pathPoints[startGoalIndex];
             float t = 0f;
 
@@ -71,7 +81,7 @@ public class MoverNew : MonoBehaviour
 
             Vector3 start = pathPoints[currIdx];
             Vector3 end = pathPoints[nextIdx];
-            float t = 0f;
+            float t = 0f;  // 매 루프마다 초기화 필수
 
             while (t < 1f)
             {
@@ -134,5 +144,30 @@ public class MoverNew : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(startPos.position, 0.25f);
         }
+    }
+
+    public void ResetMover()
+    {
+        StopAllCoroutines();
+
+        if (positions == null || positions.Length == 0)
+            return;
+
+        // 최초 위치 유지 (갱신하지 않음)
+
+        dir = 1;
+
+        transform.position = initialPosition;
+
+        if (startGoalIndex >= 0 && startGoalIndex < pathPoints.Length)
+        {
+            currIdx = startGoalIndex;
+        }
+        else
+        {
+            currIdx = 0;
+        }
+
+        StartCoroutine(MoveRoutine());
     }
 }

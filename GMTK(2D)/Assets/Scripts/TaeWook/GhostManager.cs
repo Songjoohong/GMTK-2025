@@ -100,6 +100,12 @@ public class GhostManager : MonoBehaviour
         var mushroomManager = FindObjectOfType<MushroomManager>();
         mushroomManager.ResetMushrooms();
 
+        var movers = FindObjectsOfType<MoverNew>();
+        foreach (var mover in movers)
+        {
+            mover.ResetMover();
+        }
+
     }
 
     // 플레이어 죽음 처리 시작
