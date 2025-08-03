@@ -16,9 +16,12 @@ public class GameManager : MonoBehaviour
     public GameObject dogObject;
     public List<GameObject> clones = new List<GameObject>();
 
+    public float timer = 0;
     public float waitTime = 2f;
     private float elapsedTime = 0f;
     private bool dogSpawn;
+
+    public int life = 7;
 
     void Awake()
     {
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= waitTime && !dogSpawn)
         {
