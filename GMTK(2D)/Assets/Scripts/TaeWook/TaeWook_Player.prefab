@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51957b772de982d4cb70eb9128879233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTime: 0.9
+  accelerationTime: 0.6
   decelerationTime: 0.15
   maxSpeed:
   - 14
@@ -709,8 +709,8 @@ MonoBehaviour:
   - 14
   jumpHeight:
   - 5
-  - 5
-  - 5
+  - 4.8
+  - 5.8
   timeToApex:
   - 0.35
   - 0.35
