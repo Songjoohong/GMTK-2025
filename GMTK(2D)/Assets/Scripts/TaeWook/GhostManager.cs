@@ -17,6 +17,8 @@ public class GhostManager : MonoBehaviour
 
     // 플레이어 죽음 처리 중인지 플래그
     private bool isPlayerDying = false;
+    private int tryCount = 1;
+    public GameObject centerText;
 
     public bool IsPlayerDying()
     {
@@ -65,6 +67,9 @@ public class GhostManager : MonoBehaviour
         }
 
         StartCoroutine(BeginAllGhostsNextFrame());
+
+        tryCount++;
+        centerText.GetComponent<CenterTextController>().ShowText(tryCount);
     }
 
     private IEnumerator BeginAllGhostsNextFrame()
@@ -122,5 +127,6 @@ public class GhostManager : MonoBehaviour
     public void EndPlayerDeath()
     {
         isPlayerDying = false;
+        GameManager.Instance.life--;
     }
 }

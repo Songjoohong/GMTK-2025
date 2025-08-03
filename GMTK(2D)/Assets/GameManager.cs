@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public int life = 7;
 
+    public int tryCount = 1;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
