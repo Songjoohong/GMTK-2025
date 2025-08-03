@@ -97,8 +97,6 @@ MonoBehaviour:
   playerTag: Player
   cloneTag: Ghost
   boxCollider: {fileID: 5147533426102982351}
-  parentColliders:
-  - {fileID: 5147533426102982351}
 --- !u!1 &1343042187254282729
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  - {fileID: -659793012767488904, guid: 2e71670b0bdd41c4ba49c4b3c0e9ff83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,15 +200,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e71670b0bdd41c4ba49c4b3c0e9ff83, type: 2}
+  m_sharedMaterial: {fileID: -659793012767488904, guid: 2e71670b0bdd41c4ba49c4b3c0e9ff83, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278519045
+  m_fontColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -227,8 +225,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
