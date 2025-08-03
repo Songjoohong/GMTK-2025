@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FX_MAT_Fire_01 17
+  m_Name: FX_MAT_Fire_01 20
   m_Shader: {fileID: 4800000, guid: 3da145288acc90e4dbd9d04e2514d5f0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -15,6 +15,7 @@ Material:
   m_InvalidKeywords:
   - _DISSOLVEUSEDISTORT_ON
   - _MAINUSEDISTORT_ON
+  - _USECUSTOM_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,20 +43,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DissolveTex:
-        m_Texture: {fileID: 2800000, guid: 9aed79b0526c55343aee8f38e08e64d6, type: 3}
-        m_Scale: {x: 0.5, y: 0.25}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortTex:
-        m_Texture: {fileID: 2800000, guid: 4143e0af57529e940ad9f4450e9aae79, type: 3}
-        m_Scale: {x: 0, y: 0.25}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9aed79b0526c55343aee8f38e08e64d6, type: 3}
-        m_Scale: {x: 2, y: 0.25}
+        m_Texture: {fileID: 2800000, guid: a4ed18b0102549645bb9b3622293404e, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -83,7 +84,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0
     - _AlphaCutoff: 0.5
     - _Blend_Mode: 10
     - _Brightnessamount: 0
@@ -97,7 +98,7 @@ Material:
     - _DissolveUV: 0
     - _DissolveUseDistort: 1
     - _Dissolve_Mode: 0
-    - _Dissolveamount: 0.181
+    - _Dissolveamount: 0.093
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -113,14 +114,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseCustom: 0
+    - _UseCustom: 1
     - _ZWrite: 1
     m_Colors:
-    - _BrightnessColor: {r: 1.5124317, g: 3.6605916, b: 3.8630788, a: 0}
+    - _BrightnessColor: {r: 3.8490567, g: 0.66012275, b: 0.16340329, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolvePannerXY: {r: 5, g: 0, b: 0, a: 0}
-    - _DistortPannerXYPowerXY: {r: -2, g: 0, b: 7, a: 0}
+    - _DissolvePannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortPannerXYPowerXY: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainTexPannerXY: {r: 0.15, g: 0, b: 0, a: 0}
-    - _Tint: {r: 11.984315, g: 11.984315, b: 11.984315, a: 1}
+    - _MainTexPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
