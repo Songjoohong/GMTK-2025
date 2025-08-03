@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GhostManager : MonoBehaviour
 {
@@ -128,5 +129,9 @@ public class GhostManager : MonoBehaviour
     {
         isPlayerDying = false;
         GameManager.Instance.life--;
+        if (GameManager.Instance.life == 0)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
     }
 }

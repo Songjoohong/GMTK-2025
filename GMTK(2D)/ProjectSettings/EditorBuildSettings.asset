@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/StartScene.unity
+    guid: d4a56539a55e20148b41b40fe5d6a118
+  - enabled: 1
+    path: Assets/Scenes/TimetiralGhost.unity
+    guid: 86fc38d5331038a42ab77d7cc8277564
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 59ba762a8a489664fba36d39e66f55c4
+  - enabled: 1
+    path: Assets/Scenes/End_Escape.unity
+    guid: f6abe0ea3631e164182b11c03db9fea5
   m_configObjects: {}
