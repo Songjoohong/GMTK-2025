@@ -23,6 +23,7 @@ public class TeleportManager : MonoBehaviour
 
     public void StartTeleportCooldown(MonoBehaviour owner)
     {
+        SoundManager.Instance.PlayOneShotSound("SFX_Door_In");
         owner.StartCoroutine(TeleportCooldownRoutine());
     }
 

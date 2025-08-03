@@ -68,6 +68,14 @@ public class Door : MonoBehaviour
         bool isOpen = AreAllIndicatorsActive();
         if (spriteRenderer != null)
             spriteRenderer.sprite = isOpen ? openSprite : closeSprite;
+        if (isOpen && !lastIndicatorState)
+        {
+            SoundManager.Instance.PlayOneShotSound("SFX_DoorOpen");  // 문 열릴 때 사운드
+        }
+        else if (!isOpen && lastIndicatorState)
+        {
+            SoundManager.Instance.PlayOneShotSound("SFX_DoorClose"); // 문 닫힐 때 사운드
+        }
     }
 
     public bool IsOpen()
@@ -114,8 +122,12 @@ public class Door : MonoBehaviour
         foreach (var hit in hits)
         {
             if (hit.CompareTag(playerTag))
+            {
                 return hit.transform;
+            }
+                
         }
         return null;
     }
 }
+//SoundManager.Instance.PlayOneShotSound("SFX_Door");
