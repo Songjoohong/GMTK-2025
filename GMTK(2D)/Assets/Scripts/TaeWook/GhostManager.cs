@@ -44,6 +44,8 @@ public class GhostManager : MonoBehaviour
 
     public void SpawnGhosts()
     {
+        GameManager.Instance.ResetDog();
+
         ClearGhosts();
         ghostInstances.Clear();
 
