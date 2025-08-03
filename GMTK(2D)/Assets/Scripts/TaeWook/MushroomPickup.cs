@@ -10,7 +10,7 @@ public class MushroomPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(playerTag) || other.CompareTag(cloneTag))
+        if (other.CompareTag(playerTag))
         {
             var characterStatus = other.GetComponent<CharacterStatus>();
             if (characterStatus != null)
